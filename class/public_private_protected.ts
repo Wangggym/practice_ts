@@ -41,6 +41,7 @@ class Person {
 class Employees extends Person {
     private department: string;
     constructor(name: string, department: string) {
+        
         super(name)
         this.department = department;
     }
