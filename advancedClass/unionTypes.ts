@@ -28,3 +28,19 @@ function getSmallPet(): Fish | Bird {
 let pet = getSmallPet()
 pet.layEggs();
 pet.swim()
+
+if ((pet as Fish).swim) {
+    (pet as Fish).swim()
+} else if ((<Bird>pet).fly) {
+    (<Bird>pet).fly()
+}
+
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (<Fish>pet).swim !== undefined
+}
+
+if (isFish(pet)) {
+    pet.swim()
+} else {
+    pet.fly()
+}
