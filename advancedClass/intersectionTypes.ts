@@ -31,3 +31,39 @@ class ConsoleLogger implements loggable {
 var jim = extend(new Person('Jim'), new ConsoleLogger())
 var n = jim.name
 jim.log()
+
+
+type Alias = { num: number }
+interface Interface {
+    num: number;
+}
+
+declare function aliased(arg: Alias): Alias
+declare function interfaced(arg: Interface): Interface
+
+
+type Easing = "ease-in" | "ease-out" | "ease-in-out";
+class UIElement {
+    animate(dx: number, dy: number, easing: Easing) {
+        if (easing === "ease-in") {
+
+        } else if (easing === "ease-out") {
+
+        } else if (easing === "ease-in-out") {
+
+        } else {
+
+        }
+    }
+}
+
+let button = new UIElement();
+button.animate(0, 0, 'ease-in')
+button.animate(0, 0, 'uneasy') 
+
+function createElement(tagName: "img"): HTMLImageElement;
+function createElement(tagName: "input"): HTMLInputElement;
+// ... more overloads ...
+function createElement(tagName: string): Element {
+    // ... code goes here ...
+}
