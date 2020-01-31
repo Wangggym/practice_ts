@@ -59,7 +59,7 @@ class UIElement {
 
 let button = new UIElement();
 button.animate(0, 0, 'ease-in')
-button.animate(0, 0, 'uneasy') 
+button.animate(0, 0, 'uneasy')
 
 function createElement(tagName: "img"): HTMLImageElement;
 function createElement(tagName: "input"): HTMLInputElement;
@@ -67,3 +67,9 @@ function createElement(tagName: "input"): HTMLInputElement;
 function createElement(tagName: string): Element {
     // ... code goes here ...
 }
+
+interface Map<T> {
+    [key: string]: T
+}
+
+let keys: keyof Map<number>
